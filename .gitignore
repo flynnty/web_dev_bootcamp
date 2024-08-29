@@ -1,0 +1,5 @@
+priv/
+scripts/
+
+*.mp4
+video_audio_capture.txt

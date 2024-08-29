@@ -1,0 +1,249 @@
+01 Front End Wev Development
+02 Intro to HTML
+
+  ------element------
+  |                 |
+  tag---content---tag
+  |                 |
+  <h1>Hello World</h1>
+
+  header element h1 to h6
+
+    <h1>Hello World</h1>
+
+  paragraph element
+
+    <p>Hello World</p>
+
+  horizontal rule
+
+    <hr />
+
+  break
+
+    <br />
+
+  non void element
+    a non void element has an opening tag and a closing tag
+
+    <h1>Hello World</h1>
+
+  void element
+    a void element has an opening tag and no closing tag
+
+    <hr />
+
+03 Intermediate HTML
+
+  a. list elements
+    unordered list
+      this is a bullet point style list
+  
+      <ul></ul>
+  
+    ordered list
+      this is a numbered/lettered style list
+  
+      <ol></ol>
+  
+    list element
+      thise list items are inside an ordered or unordered list
+  
+      <li></li>
+
+  b. nesting and indentation
+
+    <ol>
+      <li></li>
+      <li></li>
+        <ul>
+          <li></li>
+          <li></li>
+        </ul>
+      <li></li>
+    </ol>
+
+
+
+04 Multi Page Websites
+
+  a. html boilerplate
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+    </head>
+    <body>
+    
+    </body>
+    </html>
+
+05 Intro CSS
+  a. adding css
+    inline:
+      affects single html tag in single html file
+  
+      <body>
+        <h1 style="color: blue;">Style Me in Blue!</h1>
+      </body>
+  
+    internal:
+      affects tags specified in single html file
+  
+      <head>
+        <style>
+          h1 {
+            color: red;
+          }
+        </style>
+      </head>
+  
+    external:
+      affects all html files pointing to *this stylesheet
+  
+      index.html
+        <head>
+          <link rel="stylesheet" href="./style.css" />
+        </head>
+  
+      style.css:
+        h1 {
+          color: green;
+        }
+
+  b. css selectors
+
+    tag
+      tags are used in css to apply style to the tag specified
+
+      index.html
+        <h1>Hello World</h1>
+      style.css
+        h1 {
+          color: red;
+        }
+
+    id
+      ids are used to define a single attribute & should only be used to tag
+      one single element
+
+      index.html
+        <h1 id="red">Hello World</h1>
+
+      style.css
+        #red {
+          color: red;
+        }
+
+    class
+      class tags can be used in the html file in multiple locations to group 
+      elements together for css style application
+
+      index.html
+        <h1 class="red">Hello World</h1>
+        class can contain multiple class tags such as class="red header uppercase"
+        in which case h1 above would be a member of all 3 different classes
+
+      style.css
+
+        .red {
+          color: red;
+        }
+
+    all elements (tag/id/class)
+
+      * {
+        color: red;
+      }
+  
+    
+06 CSS Properties
+
+  a. css colors
+    text color:
+
+      h1 {
+        color: red;
+        }
+
+    background color
+
+      h1 {
+        background-color: red;
+        }
+
+  b. font properties
+
+    font size:
+      pt
+        1 point = 1/72 inch
+	h1 {
+          font-size: 20pt;
+        }
+
+      px
+        1 pixel = 1/96 inch
+	h1 {
+          font-size: 20px;
+        }
+
+      em
+        1em = 100% of parent font size
+	h1 {
+          font-size: 2em;
+        }
+
+      rem
+        1rem = 100% of root (<html></html>) font size
+	h1 {
+          font-size: 2rem;
+        }
+
+    font weight:
+      100 - 900, 100 = lightest, 900 = boldest
+
+    font family:
+      font name, backup font style
+       h1 {
+        font-family: caveat, cursive;
+      }
+
+    text align:
+      text align right/center/left
+       h1 {
+        text-align: right;
+      }
+
+    font import:
+      To import or embed a specific font such as found on fonts.google.com
+
+      index.html
+        <head>
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+        </head>
+
+      style.css
+        h1 {
+          font-family: caveat, cursive;
+	}
+
+
+  c. inspecting css
+  d. the css box model
+
+
+
+07 Intermediate CSS
+
+  a. specificity and inheritance
+
+  b. combining css selectors
+
+  c. css positioning
+
+  d. css flag
