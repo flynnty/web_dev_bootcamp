@@ -245,5 +245,33 @@
   b. combining css selectors
 
   c. css positioning
+    static
+      default postion, each element positioned under previous element
+      .box {
+        position: fixed;
+        left: 20px
+        top: 20px
+      }
+      here left and top have no effect and there is no need to specify fixed
+      as this is the default position anyway
+      
+    relative
+      postion is relative to static (default) position
+      .box {
+        position: relative;
+        left: 20px
+        top: 20px
+      }
+      Now the box will move 2opx to the right and 20px down from its
+      default poisition
+
+    absolute
+      position is relative to nearest ancestor that has position defined, if no ancestor has
+      position defined position is relative to the top left of the webpage
+
+    fixed
+      position is relaitve to the top left of the browser window, when we scroll the page
+      the element will move to hold position 
+
 
   d. css flag
