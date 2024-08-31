@@ -241,8 +241,53 @@
 07 Intermediate CSS
 
   a. specificity and inheritance
+    cascade priority
+      The following 4 options make up the cascade priority, position has the lowest
+      priority and importance has the highest priority.  The bottom of the cascade
+      gets the highest priority
+
+      position
+        The position of the css rule in a file that sets the same element matters.
+        The lower down in the file the greater the priority because the last setting
+        holds.
+      specificity
+        element, class, attribute, id
+      type
+        external, internal, inline
+      importance
+        adding a !important tag after a css rule gives it priority over the
+        same rule without the !important tag
+
+
 
   b. combining css selectors
+    when combining selectors such as tag, attribute, class or id there are
+    different options to target the elements as required
+
+    descendant
+      .class tag {
+        this will target all tag elements that are descendants of .class
+      }
+
+    child
+      .class > tag {
+        this will target all tag elements that are direct descendants of .class
+      }
+
+    group
+      .class, tag {
+        this will target all .class elements and all tag elements
+      }
+
+    chaining
+      tag.class {
+        Applied where all selectors are true.  Always start with the tag then
+        chain .class or #id or attribute
+      }
+    combining selectors
+      tag tag.class > #id {
+      }
+
 
   c. css positioning
     static
@@ -262,7 +307,7 @@
         left: 20px
         top: 20px
       }
-      Now the box will move 2opx to the right and 20px down from its
+      Now the box will move 20px to the right and 20px down from its
       default poisition
 
     absolute
@@ -274,4 +319,45 @@
       the element will move to hold position 
 
 
-  d. css flag
+08 Advanced CSS
+
+  a. css display
+    by default an element such as <p>paragraph</p> will span the width of a webpage.
+    we can set the width and height css properties to change the defaults. Elements
+    will stack on top of each other
+
+    display: inline;
+      this option sets the span to the width of the element, width option has
+      no effect on the width.  Inline elements will stack up side by side until
+      there is no room left on the width of the webpage
+
+    display: block;
+      this option allows us set the width and height of the element and goes
+      on its own line
+      
+    display: inline-block;
+      this option allows us set the width and height of the element and can go
+      on the same line as another element provided there is room for it and the
+      other element, if it does not fit it will jump down to the next line
+
+  b. css float
+    use float to wrap text around images, apply float tag to img rule, float: left;
+    img goes left ant text wraps to the right and bottom.
+
+    to clear float property from elements such as footer we can use clear: left;
+    in css tag rule so the element ignores the float rule.  Float rule can be
+    applied to more elements such as div to organise boxes on the webpage.
+
+  c. how to create responsive website
+    media queries, flexbox, grid, bootstrap
+
+  d. media queries
+    apply css rules based on the width of the browser window
+    
+    @media (min-width: 319px) and (max-width: 480px) {
+      body {
+        background-color: lightsalmon;
+      }
+    }
+  
+

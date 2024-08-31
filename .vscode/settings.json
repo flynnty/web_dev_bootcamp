@@ -1,0 +1,14 @@
+{
+    "editor.inlineSuggest.suppressSuggestions": false,
+    
+    "[plaintext]": {
+        "editor.quickSuggestions": {
+            "comments": "off",
+            "strings": "off",
+            "other": "off"
+        },
+        "editor.suggestOnTriggerCharacters": false,
+        "editor.wordBasedSuggestions": "off",
+        "editor.suggest.showWords": false
+        }
+}
