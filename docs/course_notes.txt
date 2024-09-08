@@ -342,7 +342,8 @@
 
   b. css float
     use float to wrap text around images, apply float tag to img rule, float: left;
-    img goes left ant text wraps to the right and bottom.
+    img goes left ant text wraps to the right and bottom.  Dont use float for page
+    layout.
 
     to clear float property from elements such as footer we can use clear: left;
     in css tag rule so the element ignores the float rule.  Float rule can be
@@ -360,4 +361,83 @@
       }
     }
   
+09 Flexbox
+  Flexbox is good for single column or single row content.  This can be as an
+  entire webpage (procong structure), or within box within a grid
 
+  a. display flex
+    all of the elements enclosed by the <div class=container> will occupy a flex
+    column.  gap sets the distance between columns
+    .container {
+      display: flex (or inline-flex)
+      gap 10px
+    }
+  b. flex direction
+    default direction is row (flex-direction:row) so the columns stack side by
+    side, we can set flex-direction:column so the conatiner items stack on top
+    of each other and not side by side.
+
+    The flex-basis: 100px sets the width or height of a column/row based on the
+    flex-direction.  if flex direction is row then the basis sets the width, if
+    it's column then basis sets the height.  Flex basis is set on the child
+    element and not on the container
+
+    To select all the children you can use .container > * {}
+
+  
+  c. flex layout
+
+    By default all flex box elements have an order:0 property, setting the order
+    > 0 will shift row item columns to the right, whith the highest order being
+    most right.
+
+    flex-wrap:nowrap; this is the default, the flex box gets pushed off the page
+    flex-wrap:wrap; elements that don't fit the width wrap to the next line below.
+    flex-wrap:wrap-reverse; elements that don't fit the width wrap to the line above.
+
+    justify content controls the x direction for flex:direction:row
+    justify-content: flex-start, flex-end, center, space-betwen, space-around
+
+    align-items controls the y direction for flex:direction:row
+    align-items: flex-start, flex-end, center, space-betwen, space-around
+
+    flex-wrap/justify-content/align-items are .container properties
+
+    align-self: flex-start, singles out a container child for alignment thats
+    different to the container align-items.  This property must be applied on
+    a child by child basis.
+
+
+  d. flex sizing
+    priority cascade width, flex-basis, min/max-width
+    flex-grow: / flex-shrink: 0/1
+    flex: grow shrink basis, flex: 0 1 100px
+    flex_item_1{ flex 1 }, flex_item_2{ flex 2 }, item 2 will be twice as wide as 1
+
+10 Grid
+  Use grids for web pages with varying sizes of columns and rows
+
+  a. display
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      grid-template-rows: 1fr 1fr;
+      gap 5px;
+    }
+    fr - gives each column a fractional ratio
+    repeat(n, 1fr) - repeat same command n times
+    auto, automatically sizes the grid cell width to page or height to content
+    minmax(400px, 800px), fix grid width to between minmax
+    grid-column: span 2;
+
+    .grid_item {
+      grid-area: 1/2/3/4;
+        {  grid-column-start: 2;
+           grid-column-end: 3;
+           grid-row-start: 1;
+           grid-row-end: 4;
+        }
+        use -1 to pick the last columns and 1 for the first column
+        grid cells can overlap and we can set alpha channel for transparancy of
+        layers
+    }  

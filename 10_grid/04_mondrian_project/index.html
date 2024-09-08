@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mondrian Project</title>
+  <style>
+    /* 
+    Write your CSS here 
+    Gap Colour: #000
+    White: #F0F1EC
+    Red: #E72F24
+    Black: #232629
+    Blue: #004592
+    Yellow: #F9D01E
+
+    For dimensions, see dimensions.png image.
+    HINT: Remember you can't change the properties of grid lines.
+    But grid lines are transparent!
+    */
+    .flex-container {
+      display:flex;
+      justify-content: space-around;
+      height: 100vh;
+      padding-top: 100px;
+    }
+    .grid1 {
+      display:grid;
+      grid-template-columns: 320px auto 50px;
+      grid-template-rows: 414px auto 20px;
+      gap: 9px;
+    }
+
+    .grid2 {
+      display:grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: 20px;
+      gap: 9px;
+    }
+
+    .grid3 {
+      display:grid;
+      grid-template-columns: 50;
+      grid-template-rows: 1fr 1fr;
+      gap: 9px;
+    }
+
+    .span2 {
+      grid-column: span 2;
+    }
+
+    .red {
+      background-color: #E72F24;
+    }
+    .white {
+      background-color: white;
+    }
+    .yellow {
+      background-color: yellow;
+    }
+    .grey {
+      background-color: #232629;
+    }
+    .blue {
+      height: 130px;
+      background-color: #004592;
+    }
+    #left {
+      width: 100px;
+    }
+    #middle {
+      width: 748px;
+      height: 748px;
+      /* set grid line gap black*/
+      background-color: black;
+    }
+    #right {
+      width: 100px;
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <!-- Write your HTML here -->
+   <div class="flex-container">
+    <div id="left"></div>
+    <div id="middle" class="grid1">
+      <div class="red"></div>
+      <div class="white span2"></div>
+      <div class="white"></div>
+      <div class="white"></div>
+      <div class="grid3">
+        <div class="blue"></div>
+        <div class="white"></div>
+      </div>
+      <div class="white"></div>
+      <div class="grid2">
+        <div class="yellow"></div>
+        <div class="grey"></div>
+      </div>
+      <div class="white"></div>
+    </div>
+    <div id="right"></div>
+   </div>
+</body>
+
+</html>

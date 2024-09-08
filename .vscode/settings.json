@@ -1,5 +1,6 @@
 {
     "editor.inlineSuggest.suppressSuggestions": false,
+    "editor.rulers": [80],
     
     "[plaintext]": {
         "editor.quickSuggestions": {
